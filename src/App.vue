@@ -1,11 +1,25 @@
 
 
 <template>
-  <home></home>
+  <div>
+    <div class="top-nav">
+      <router-link
+        to="/"
+      >页面1</router-link>
+      <router-link
+        to="/stand"
+      >页面2</router-link>
+    </div>
+    <router-view v-slot="{ Component }">
+      <keep-alive>
+        <component :is="Component"/>
+      </keep-alive>
+    </router-view>
+  </div>
 </template>
 
 <script setup lang="ts">
-import home from './components/Home.vue'
+import home from './components/home/Home.vue'
 
 </script>
 
@@ -17,5 +31,12 @@ import home from './components/Home.vue'
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.top-nav{
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 </style>

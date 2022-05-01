@@ -11,7 +11,7 @@ interface IMainStore {
 
 export const mainStore = defineStore('main', {
     state: (): IMainStore => {
-        return {
+        return { 
             stuRefresh: 1,
             parRefresh: 1,
             data:{
@@ -35,10 +35,7 @@ export const mainStore = defineStore('main', {
     },
     // 通过actions 修改仓库的数据
     actions: {
-      async changeStuRefresh(){
-        const res = await getUrl()
-        // actions 中 可以使用异步
-        console.log('res',res);
+      changeStuRefresh(){
         this.stuRefresh++
       }
     }

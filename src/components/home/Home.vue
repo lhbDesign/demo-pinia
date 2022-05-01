@@ -2,7 +2,7 @@
 <template>
   <div class="home-container">
     <div>测试页面</div>
-    <div>展示变化数据 {{showID}}</div>
+    <div>展示全局store数据 {{showID}}</div>
     <div>展示toRef数据 {{store.stuRefresh}}</div>
     <div>
       <button @click="clickHandler">调试按钮</button>
@@ -13,7 +13,7 @@
 <script lang="ts">
 import { storeToRefs } from 'pinia';
 import { computed, defineComponent } from 'vue'
-import {mainStore} from './../store/index'
+import {mainStore} from '@/store/index'
 export default defineComponent({
   setup() {
     const store = mainStore();
