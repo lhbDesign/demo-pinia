@@ -10,10 +10,7 @@
         to="/stand"
       >页面2</router-link>
     </div>
-    <router-view v-slot="{ Component }">
-      <keep-alive>
-        <component :is="Component"/>
-      </keep-alive>
+    <router-view>
     </router-view>
   </div>
 </template>

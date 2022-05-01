@@ -22,5 +22,20 @@ export const homeStore = defineStore('home', {
       changeRefresh(){
         this.homeData.count++
       }
+    },
+    // 使用本地存储，默认存放在sessionStorage
+    persist:{
+      enabled:true,
+      // 配置本仓库的key 及存储位置, 和指定 持久化数据
+      strategies:[
+        {
+          key:'my_home',
+          storage:localStorage
+        },
+        // 可以用过配置 ptah 来指定数据持久化
+        {
+          paths:[]
+        }
+      ]
     }
 })
