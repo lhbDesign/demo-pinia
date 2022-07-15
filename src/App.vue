@@ -1,11 +1,11 @@
 
 
 <template>
-  <home></home>
+  <Aboute></Aboute>
 </template>
 
 <script setup lang="ts">
-import home from './components/Home.vue'
+import Aboute from './components/Aboute.vue'
 
 </script>
 

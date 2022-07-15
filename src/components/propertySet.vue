@@ -31,7 +31,7 @@
   </div>
   <div v-show="showMistakesBox">
     <div class="property_title">
-      <div>错题重做</div>
+      <div>{{mistakesTitle}}</div>
       <el-switch v-model="showMistakes" />
     </div>
     <div v-show="showMistakes">
@@ -96,7 +96,13 @@ export default defineComponent({
 
     // 错题重做
     const count = ref(1);
-    changeData ? (showMistakesBox.value = true) : "";
+    const mistakesTitle = ref('')
+    if(changeData){
+      showMistakesBox.value = true;
+      count.value = changeData?.count || 1;
+      mistakesTitle.value = changeData?.title || '';
+      
+    }
 
     const handleChange = (value) => {};
     console.log('props.submit',props.submitStatus);
@@ -123,7 +129,8 @@ export default defineComponent({
       checkboxGroup,
       checkData,
       checkedHandle,
-      inputBlurHandle
+      inputBlurHandle,
+      mistakesTitle
     };
   },
 });
