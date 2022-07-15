@@ -28,10 +28,12 @@ export default defineComponent({
   setup() {
     const count = ref(1)
     const obj = ref<Array<Record<any,any>>>([])
+
     const submitHandle = (v:any) => {
       console.log('参数',v.data,obj);
       obj.value.push(v.data)
     }
+
     watch(()=>count,()=>{
       console.log('obj',obj);
     })
