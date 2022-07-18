@@ -1,7 +1,7 @@
 
 
 <template>
-  <Home></Home>
+  <Aboute></Aboute>
 </template>
 
 <script setup lang="ts">
